@@ -2,11 +2,21 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import Footer from "./Footer";
 
+import { allModes } from "../../../modes-config/modes";
+
 const meta = {
   title: "Components/Footer",
   component: Footer,
   parameters: {
     layout: "fullscreen",
+    chromatic: {
+      //🔶 Test each story for ArticleCard with this mode
+      modes: {
+        tiny: allModes.xsm,
+        medium: allModes.md,
+        xlarge: allModes.xl,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
@@ -49,9 +59,7 @@ export const Default: Story = {
     inverted: false,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
         <p css={{ color: "#6b7280" }}>
@@ -74,14 +82,10 @@ export const CustomColor: Story = {
     inverted: false,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
-        <p css={{ color: "#6b7280" }}>
-          Footer with custom blue background.
-        </p>
+        <p css={{ color: "#6b7280" }}>Footer with custom blue background.</p>
       </div>
       <Footer {...args} />
     </div>
@@ -99,14 +103,10 @@ export const GreenColor: Story = {
     inverted: false,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
-        <p css={{ color: "#6b7280" }}>
-          Footer with custom green background.
-        </p>
+        <p css={{ color: "#6b7280" }}>Footer with custom green background.</p>
       </div>
       <Footer {...args} />
     </div>
@@ -124,9 +124,7 @@ export const Inverted: Story = {
     inverted: true,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#1f2937" }}>
         <h1 css={{ color: "#ffffff" }}>Page Content</h1>
         <p css={{ color: "#d1d5db" }}>
@@ -155,14 +153,10 @@ export const WithLinks: Story = {
     inverted: false,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
-        <p css={{ color: "#6b7280" }}>
-          Footer with navigation links.
-        </p>
+        <p css={{ color: "#6b7280" }}>Footer with navigation links.</p>
       </div>
       <Footer {...args} />
     </div>
@@ -191,14 +185,10 @@ export const ManyLinks: Story = {
     inverted: false,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
-        <p css={{ color: "#6b7280" }}>
-          Footer with multiple navigation links.
-        </p>
+        <p css={{ color: "#6b7280" }}>Footer with multiple navigation links.</p>
       </div>
       <Footer {...args} />
     </div>
@@ -219,9 +209,7 @@ export const WithCallback: Story = {
     }),
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div css={{ flex: 1, padding: "32px", backgroundColor: "#f9fafb" }}>
         <h1 css={{ color: "#1f2937" }}>Page Content</h1>
         <p css={{ color: "#6b7280" }}>
@@ -244,9 +232,7 @@ export const InvertedWithLinks: Story = {
     inverted: true,
   },
   render: (args) => (
-    <div
-      css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}
-    >
+    <div css={{ minHeight: "400px", display: "flex", flexDirection: "column" }}>
       <div
         css={{
           flex: 1,
